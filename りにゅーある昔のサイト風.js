@@ -3,7 +3,7 @@
 (function() {
 
     // ステップ1: CSSをテキストとして取得し、<style>タグとしてページに埋め込む
-    const css_url = 'https://raw.githubusercontent.com/arurion/a/main/%E3%82%8A%E3%81%AB%E3%82%85%E3%83%BC%E3%81%82%E3%82%8B%E3%81%95%E3%82%8C%E3%81%9F%E6%98%94%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%88%E9%A2%A8.css'; // このURLはあなたのものに合わせてください
+    const css_url = 'https://raw.githubusercontent.com/arurion/a/refs/heads/main/%E3%82%8A%E3%81%AB%E3%82%85%E3%83%BC%E3%81%82%E3%82%8B%E6%98%94%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%88%E9%A2%A8.css'; // このURLはあなたのものに合わせてください
     fetch(css_url)
       .then(r => r.text())
       .then(t => {
