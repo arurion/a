@@ -1,0 +1,58 @@
+/* style.css */
+
+/* 元のページのスタイルを可能な限り無効化し、我々の世界を創り出す */
+:not(script, style) {
+    all: revert !important; 
+    font-family: 'MS PGothic', 'IPAMonaPGothic', 'Mona', 'Meiryo', sans-serif !important;
+    -webkit-font-smoothing: none !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+}
+
+/* 侵食するオーバーレイ本体 */
+#chaos-gate {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 2147483647 !important; /* 可能な限り最前面へ */
+    background-color: #000000 !important;
+    background-image: url('https://i.gifer.com/origin/a6/a62614b150961e65b4c1945d7f1d418e_w200.gif') !important;
+    background-repeat: repeat !important;
+    overflow: auto !important;
+    padding: 20px !important;
+    color: #FFFFFF !important;
+    cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAXxJREFUSEudlU1KA0EUhb/vR6S2vrC1iFCsgo3gRbyBN/Eu3kYsbS1sRAsb/QAB8QZCwr7ETsA6YENmNzIJSd2pDDy4M+fOnN/MnQv+44/4t8M4MbZ/uS49h5dvoTX1gGRZpmy7h0/vQRtrgAmzbVv3z+Y6rtt1W1fKgqIoKIrMsu223W7X4XC4ttrVNM/zRdd1hmGapsnzvO/7vV7vD6G8LqCmaV6v11sUhalpmm1bVZXmef56vY5xHCGELMs6A3EcFwDA9322bdt2u20YxoH1SgFg2zaGYY7jNE1RVfXXbW0QBNd13dZtoiiKomiOYwRBcByHpmn+eq0BsKzLJE133dZtf3cVDMPoOIfHx4dEApT3/V7vNyF8WZZb222Y5/laLQCgKAqGYZxzx3GMMa7r+hq21gBf99V1meS2rZ3n+VqtVpIkKQBwHEeS5LbtLMsyKcqy3NoBwHHcNM22bZxzvu9f/8QfaQCf8B/tBUgLq0EAAAAASUVORK5CYII="), auto !important;
+}
+
+/* 虹色に輝くテキストのアニメーション */
+@keyframes rainbow-text { 0%{color:red} 15%{color:orange} 30%{color:yellow} 45%{color:green} 60%{color:cyan} 75%{color:blue} 90%{color:purple} 100%{color:red} }
+/* 点滅するアニメーション */
+@keyframes blink { 50% { opacity: 0; } }
+/* 回転するアニメーション */
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* 中央のコンテンツエリア */
+#main-contents {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto !important;
+    background-color: rgba(0, 0, 50, 0.8) !important;
+    border: 5px ridge #FF00FF !important;
+    box-shadow: 0 0 20px #00FFFF, 0 0 30px #FF00FF !important;
+    padding: 15px !important;
+}
+.title { font-size: 28px !important; font-weight: bold !important; text-align: center !important; animation: rainbow-text 3s linear infinite !important; text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FF00FF !important; border-bottom: 3px double #00FFFF !important; padding-bottom: 10px !important; letter-spacing: 5px !important; }
+marquee { font-size: 20px !important; color: #FFFF00 !important; font-weight: bold !important; background-color: #000080 !important; border: 2px inset #CCCCCC !important; padding: 5px !important; }
+.section-title { font-size: 20px !important; color: #00FF00 !important; background-color: #333 !important; border-left: 10px solid #FF00FF !important; border-right: 10px solid #FF00FF !important; padding: 5px !important; margin-top: 20px !important; text-align: center !important; animation: blink 1.5s step-end infinite !important; }
+.profile { background: #111 !important; border: 1px dashed #FFFFFF !important; padding: 10px !important; margin-top: 10px !important; }
+.profile dt { color: #FF69B4 !important; font-weight: bold !important; }
+.profile dd { color: #ADFF2F !important; padding-left: 20px !important; }
+.links ul { list-style: none !important; padding: 0 !important; }
+.links li a { display: block !important; color: #FFFFFF !important; text-decoration: none !important; background-color: #333333 !important; border: 1px outset #555555 !important; padding: 8px !important; margin-bottom: 5px !important; }
+.links li a:hover { color: #000000 !important; background-color: #00FFFF !important; border: 1px inset #00FFFF !important; font-weight: bold !important; }
+.icon { animation: spin 5s linear infinite !important; }
+.construction-gif { border: 0 !important; }
+.center-align { text-align: center !important; }
+.kiriban { border: 3px dotted #FFD700 !important; padding: 10px !important; margin-top: 20px !important; color: #FFD700 !important; background-color: #222 !important; text-align: center !important; font-weight: bold !important; }
