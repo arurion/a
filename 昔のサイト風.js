@@ -1,15 +1,19 @@
-// script.js
+// script.js (修正版)
 
 (function() {
-    // --- スタイルシートを読み込む ---
-    const css_url = 'https://raw.githubusercontent.com/arurion/a/main/%E6%98%94%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%88%E9%A2%A8.css'; 
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = css_url;
-    document.head.appendChild(link);
+
+    // --- 【変更点】CSSもテキストとして取得し、<style>タグとして埋め込む ---
+    const css_url = 'https://raw.githubusercontent.com/arurion/a/main/%E6%98%94%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%88%E9%A2%A8.css';
+    fetch(css_url)
+      .then(r => r.text())
+      .then(t => {
+        const style = document.createElement('style');
+        style.textContent = t;
+        document.head.appendChild(style);
+      });
 
     // --- ページに注入するHTMLコンテンツを定義 ---
+    // (この部分は以前のものから変更なし)
     const retro_html_content = `
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -22,7 +26,6 @@
               <div class="center-align" style="margin-top: 20px;">
                 <img src="https://i.gifer.com/embedded/download/4Kb.gif" alt="キラキラGIF" width="50" height="50">
                 <img src="https://i.gifer.com/embedded/download/XVo6.gif" alt="キラキラGIF" width="50" height="50">
-                <img src="https://i.gifer.com/embedded/download/4Kb.gif" alt="キラキラGIF" width="50" height="50">
               </div>
               <p class="section-title">† 我が聖域の案内 †</p>
               <div class="links">
@@ -42,16 +45,16 @@
                   <dt>†DREAM†</dt><dd>いつか、この穢れた世界を浄化する聖戦(ラグナロク)を…</dd>
                 </dl>
               </div>
-              <div class="center-align" style="margin-top: 30px;"><img src="https://cdn.donmai.us/original/f1/a0/__uruha_rushia_hololive_and_1_more_drawn_by_negima_pan__f1a0e66e632b733790117282b9921c5f.gif" class="icon" alt="回転するアイコン" width="100" height="100"></div>
+              <div class="center-align" style="margin-top: 30px;"><p style="color:red;">[画像はホットリンク対策で表示不可でした]</p></div>
               <div class="kiriban">キリ番GETしたらBBSに報告してネ！<br>荒らし、誹謗中傷は闇の力で削除します。</div>
               <div class="center-align" style="margin-top: 20px;">
                 <p style="color: #ccc;">あなたは悠久の時から数えて</p>
-                <img src="https://www.akacom.jp/counter/free/img/d_01/0.gif" alt="0"><img src="https://www.akacom.jp/counter/free/img/d_01/0.gif" alt="0"><img src="https://www.akacom.jp/counter/free/img/d_01/8.gif" alt="8"><img src="https://www.akacom.jp/counter/free/img/d_01/1.gif" alt="1"><img src="https://www.akacom.jp/counter/free/img/d_01/6.gif" alt="6"><img src="https://www.akacom.jp/counter/free/img/d_01/2.gif" alt="2">
+                <p style="color:yellow; font-weight:bold;">[カウンター画像はリンク切れでした]</p>
                 <p style="color: #ccc;">番目のお客様です。</p>
               </div>
               <hr style="border: 1px dashed #00FFFF; margin-top: 20px;">
               <div class="center-align" style="margin-top: 20px;">
-                 <a href="javascript:void(0)"><img src="https://i.pinimg.com/originals/94/91/2d/94912de5f5f4a7c036329e46a596071f.gif" alt="工事中" class="construction-gif"></a>
+                 <p style="color:red;">[画像はホットリンク対策で表示不可でした]</p>
                  <p style="color: #aaa; font-size: 12px !important;">(C) 2003-2025 Abyss Gate. All rights reserved.</p>
               </div>
             </div>
