@@ -2,7 +2,7 @@
 
 (function() {
     // --- スタイルシートを読み込む ---
-    const css_url = 'https://raw.githubusercontent.com/arurion/a/refs/heads/main/%E6%98%94%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%88%E9%A2%A8.css'; 
+    const css_url = 'https://raw.githubusercontent.com/arurion/a/main/%E6%98%94%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%88%E9%A2%A8.css'; 
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.type = 'text/css';
